@@ -1,0 +1,31 @@
+#include <iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+    int n;
+	cin>>n;
+	vector<int> arr(n, 0); //initilizing vector (size,element)
+	int q;
+	cin>>q;
+	while(q--)
+	{
+	    int l,r;
+	    cin>>l>>r;
+	    arr[l]++;
+	    if(r<n)
+	    arr[r+1]--;
+	    
+	}
+	//cumutative sum
+	for(int i=0;i<n;i++)
+	{
+	    arr[i]+=arr[i-1];
+	}
+	//print the arr 
+	for(int i=0;i<n;i++)
+	{
+	    cout<<arr[i]<<" ";
+	}
+	return 0;
+}
